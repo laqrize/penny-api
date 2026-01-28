@@ -22,6 +22,15 @@ configurations {
 	}
 }
 
+
+// This is a library, not an executable - disable Spring Boot's fat JAR
+tasks.named('bootJar') {
+    enabled = false
+}
+
+tasks.named('jar') {
+    enabled = true
+}
 repositories {
     maven {
         name = "GitHubPackages"
